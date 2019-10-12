@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import string
 import urllib.parse
 import requests
 from  geopy.geocoders import Nominatim
@@ -28,5 +29,8 @@ def airindex(city):
 	return((json_data['data'])['aqi'])
 
 def aqicheck(request):
-	return render(request,'aqi/check.html',{'info':str(airindex('karnataka'))})
+	a=request.user.profile.city
+	a=a.replace(' ','')
+	print(a)
+	return render(request,'aqi/check.html',{'info':int(airindex(str(a)))})
 

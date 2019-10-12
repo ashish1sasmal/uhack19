@@ -7,20 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'user/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+
 </head>
 <body>
     <!-- <div class="heading-fixed">
         <div class="box"></div>
     </div> -->
-    <img src="{% static 'user/images/home.jpg' %}" alt="" class="home-background">
+    <img src="{% static 'user/images/home-back.jpg' %}" alt="" class="home-background">
     <div class="home-nav-box"></div>
     <h2 class="home-sub">"WE ARE SOLVING GLOBAL PROBLEMS"</h2>
     <div class="navbar">
             <h1 class="heading">Greenify</h1>
         <ul class="nav nav-tabs">
             <li class="nav-item">
-              <button class="nav-link" href="#" id="home">Home</button>
+              <button class="nav-link" id="home"><a href="{% url 'check' %}">AQI</a> </button>
             </li>
             <li class="nav-item">
               <button class="nav-link" href="#" id="about">About</button>
@@ -28,15 +29,31 @@
             <li class="nav-item">
               <button class="nav-link" href="#" id="aqi">Profile</button>
             </li>
+            {% if user.is_authenticated %}
             <li class="nav-item nav-right">
-              <button class="nav-link"  id="register"><a href="{% url 'register' %}"> Register</a></button>
+                <button class="nav-link"  id="login"><a href="{% url 'logout' %}">Logout</a></button>
+            </li>
+            
+            {% else %}
+              <li class="nav-item nav-right">
+              <button class="nav-link"  id="register"><a href="{% url 'register' %}">Register</a></button>
             </li>
             <li class="nav-item nav-right">
-                <button class="nav-link" href="{% url 'login' %}" id="login">Login</button>
+                <button class="nav-link"  id="login"><a href="{% url 'login' %}">Login</a></button>
             </li>  
+            {% endif %}
         </ul>          
     </div>
-        <button type="button" class="join-button">Join Us</button>
-        <div class="home-nav-box-2"></div>
+        <button type="button" class="join-button">Join Us Today</button>
+        <div class="home-nav-box-2">
+          <img src="{% static 'user/images/leaf1.png' %}" class="leaf" id="leaf1">
+          <div class="bottom" id="bottom1"><img src="{% static 'user/images/home-image2.jpg' %}" class="image"></div>
+          <div class="bottom" id="bottom2"><img src="{% static 'user/images/home-image3.jpg' %}" class="image"></div>
+          <div class="bottom" id="bottom3"><img src="{% static 'user/images/home-image4.png' %}" class="image"></div>
+          <div class="bottom-text" id="bottom-text1">End Plastic Pollution</div>
+          <div class="bottom-text" id="bottom-text2">Earth Day Challenge</div>
+          <div class="bottom-text" id="bottom-text3">Take Climate Action</div>
+          <img src="{% static 'user/images/leaf1.png' %}" class="leaf" id="leaf2">
+        </div>
 </body>
 </html>
