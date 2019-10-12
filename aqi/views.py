@@ -3,8 +3,8 @@ import urllib.parse
 import requests
 from  geopy.geocoders import Nominatim
 
-from django.views.generic import TemplateView
-
+from django.views.generic import TemplateView,ListView
+from django.contrib.auth.models import User
 # Create your views here.
 
 # def geoloc(city):
@@ -27,6 +27,6 @@ def airindex(city):
 	json_data=requests.get(main_api).json()
 	return((json_data['data'])['aqi'])
 
-class AQICheck(TemplateView):
-	template_name='check.html'
+def aqicheck(request):
+	return render(request,'aqi/check.html',{'info':str(airindex('karnataka'))})
 
