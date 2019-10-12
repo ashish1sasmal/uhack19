@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
 </head>
 <body>
     <div class="heading-fixed">
@@ -28,8 +29,8 @@
         <div id="text">Welcome Back!</div>
         <div id="login-text">LOGIN</div>
         <div id="register-text"><a href="#">NEW ? REGISTER</a></div>
-        <input type="text" id="FirstName" class="input" placeholder="FirstName">
-        <input type="text" id="LastName" class="input" placeholder="LastName">
+   {{form.first_name}}
+          <input type="text" id="LastName" class="input" placeholder="LastName">
         <input type="number" id="Number" class="input" placeholder="Number">
         <input type="email" id="email" class="input" placeholder="Email">
         <input type="password" id="password" class="input" placeholder="Password">

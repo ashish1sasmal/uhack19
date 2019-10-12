@@ -9,3 +9,179 @@
 .navbar{
     transform: translateX(50%)
 }
+
+body
+{
+    background-color: #20272D;
+}
+.box
+{
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    border: 1px solid #3EA72B;
+    background-color: #3EA72B;
+}
+#image-1
+{
+    position: absolute;
+    left:2%;
+    top:13%;
+    height:40%;
+    width:100%;
+}
+#image-2
+{
+    height:10%;
+    width:34%;
+}
+#image-3
+{
+    height:31%;
+    width:46%;
+    position: absolute;
+    top:67%;
+    left:25%;
+}
+#back-image
+{
+    opacity: 0.6;
+    height:80%;
+    width:60%;
+    position: absolute;
+    left:31%;
+    top:15%;
+}
+#login-text
+{
+    color:white;
+    position: absolute;
+    top:25%;
+    font-size: 140%;
+    left:48%;
+    text-decoration: underline;
+    font-weight: bold;
+}
+#email
+{
+    top:34%;
+}
+#password
+{
+    top:42%;
+}
+.input
+{
+    color:#959494;
+    height:5%;
+    width:16%;
+    position: absolute;
+    left:52%;
+    border-radius: 7px 7px 7px 7px;
+    outline: none;
+    border: none;
+}
+#password-confirm
+{
+    top:50%;
+}
+#forget-password
+{
+    top:58%;
+}
+#FirstName
+{
+    top:58%;
+}
+#LastName
+{
+    top:66%;
+}
+#Number
+{
+    top:74%;
+}
+.button
+{
+    position: absolute;
+    left:52%;
+    width:16%;
+    border-radius:7px 7px 7px 7px;
+    border:none;
+    outline: none;
+    font-size: 120%;
+}
+#login-button
+{
+    background-color: #3EA72B;
+    top:84%;
+}
+#fb-button
+{
+    background-color: #3b5998;
+    top:64%;
+}
+#gmail-button
+{
+    background-color: #db4a39;
+    top:73%;
+}
+#register-text
+{
+    color:gray;
+    position: absolute;
+    top:25%;
+    font-weight: bold;
+    font-size: 140%;
+    left:59%;
+    text-decoration: underline;
+}
+#text
+{
+    color:white;
+    position: absolute;
+    left:25%;
+    width:75%;
+    top:16%;
+    text-align: center;
+    font-size: 160%;
+    font-style: italic;
+}
+.navbar
+{
+    text-align: center;
+    color:white;
+    left:0%;
+    font-size: 130%;
+    width:15%;
+    float:left;
+}
+.navbar:hover
+{
+    cursor:pointer;
+}
+#home
+{
+    position: absolute;
+    left:25%;
+}
+#about
+{
+    position: absolute;
+    left:40%;
+}
+#aqi
+{
+    position: absolute;
+    left:55%;
+}
+#register
+{
+    position: absolute;
+    left:70%;
+}
+#login
+{
+    position: absolute;
+    left:85%;
+}
