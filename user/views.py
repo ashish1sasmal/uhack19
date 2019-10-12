@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from .models import Profile
 import smtplib
+from django.contrib.auth import authenticate
+
 # Create your views here.
 from .forms import UserForm,ProfileForm
 from django.contrib.auth.decorators import login_required
@@ -33,7 +35,7 @@ def register(request):
 		profile.save()
 		sent_email(email,name)
 		print("yes")
-		return redirect('home')
+		return redirect('login')
 
 	return render(request,'user/register.html')
 
