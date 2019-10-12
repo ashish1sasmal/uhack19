@@ -64,11 +64,11 @@ body
 }
 #email
 {
-    top:34%;
+    top:36%;
 }
 #password
 {
-    top:42%;
+    top:46%;
 }
 .input
 {
@@ -83,7 +83,7 @@ body
 }
 #password-confirm
 {
-    top:50%;
+    top:56%;
 }
 #forget-password
 {
@@ -99,7 +99,7 @@ body
 }
 #Number
 {
-    top:74%;
+    top:76%;
 }
 .button
 {
