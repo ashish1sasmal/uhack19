@@ -35,9 +35,9 @@ body
 {
     opacity: 0.6;
     height:80%;
-    width:60%;
+    width:52%;
     position: absolute;
-    left:31%;
+    left:34%;
     top:15%;
 }
 #login-text
@@ -52,11 +52,11 @@ body
 }
 #email
 {
-    top:34%;
+    top:36%;
 }
 #password
 {
-    top:42%;
+    top:46%;
 }
 .input
 {
@@ -71,11 +71,12 @@ body
 }
 #password-confirm
 {
-    top:50%;
+    top:56%;
 }
 #forget-password
 {
-    top:58%;
+    text-align: center;
+    top:62%;
 }
 #FirstName
 {
@@ -87,7 +88,7 @@ body
 }
 #Number
 {
-    top:74%;
+    top:76%;
 }
 .button
 {
@@ -104,15 +105,10 @@ body
     background-color: #3EA72B;
     top:84%;
 }
-#fb-button
+#login-button1
 {
-    background-color: #3b5998;
-    top:64%;
-}
-#gmail-button
-{
-    background-color: #db4a39;
-    top:73%;
+    background-color: #3EA72B;
+    top:56%;
 }
 #register-text
 {

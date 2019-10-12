@@ -11,15 +11,18 @@ class UserForm(UserCreationForm):
 
 	class Meta():
 		model = User
-		fields=('first_name','last_name','email','password1','password2')
+		fields=['first_name','email','password']
+		
 	
-	def __init__(self,*args,**kwargs):
-		super(UserCreationForm,self).__init__(*args,**kwargs)
-		self.fields['password1'].help_text=''
-		self.fields['password2'].help_text=''
+	# def __init__(self,*args,**kwargs):
+	# 	super(UserCreationForm,self).__init__(*args,**kwargs)
+	# 	self.fields['password1'].help_text=''
+	# 	self.fields['password2'].help_text=''
 
 
 class ProfileForm(forms.ModelForm):
 	class Meta():
 		model = Profile
-		fields=('phone',)
+		fields=('phone','city')
+		
+		
