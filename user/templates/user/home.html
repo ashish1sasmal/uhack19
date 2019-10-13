@@ -23,12 +23,7 @@
             <li class="nav-item">
               <button class="nav-link" id="home"><a href="{% url 'check' %}">AQI</a> </button>
             </li>
-            <li class="nav-item">
-              <button class="nav-link" href="#" id="about">About</button>
-            </li>
-            <li class="nav-item">
-              <button class="nav-link" href="#" id="aqi">Profile</button>
-            </li>
+            
             {% if user.is_authenticated %}
             <li class="nav-item nav-right">
                 <button class="nav-link"  id="login"><a href="{% url 'logout' %}">Logout</a></button>
@@ -44,15 +39,19 @@
             {% endif %}
         </ul>          
     </div>
-        <button type="button" class="join-button">Join Us Today</button>
+    {% if user.is_authenticated %}
+      <button type="button" class="join-button"><a href="{% url 'check' %}">CHECK AIR QUALITY NOW!!</a></button>
+      {% else %}
+        <button type="button" class="join-button"><a href="{% url 'register' %}">Join Us Today</a></button>
+        {%  endif %}
         <div class="home-nav-box-2">
           <img src="{% static 'user/images/leaf1.png' %}" class="leaf" id="leaf1">
           <div class="bottom" id="bottom1"><img src="{% static 'user/images/home-image2.jpg' %}" class="image"></div>
           <div class="bottom" id="bottom2"><img src="{% static 'user/images/home-image3.jpg' %}" class="image"></div>
           <div class="bottom" id="bottom3"><img src="{% static 'user/images/home-image4.png' %}" class="image"></div>
-          <div class="bottom-text" id="bottom-text1">End Plastic Pollution</div>
-          <div class="bottom-text" id="bottom-text2">Earth Day Challenge</div>
-          <div class="bottom-text" id="bottom-text3">Take Climate Action</div>
+          <div class="bottom-text" id="bottom-text1"><a href="https://www.unenvironment.org/interactive/beat-plastic-pollution/" target="_blank">End Plastic Pollution</a></div>
+          <div class="bottom-text" id="bottom-text2"><a href="https://thekindlife.com/blog/2013/04/earth-day-2013-challenge/" target="_blank">Earth Day Challenge</a></div>
+          <div class="bottom-text" id="bottom-text3"><a href="https://www.undp.org/content/undp/en/home/sustainable-development-goals/goal-13-climate-action.html" target="_blank">Take Climate Action</a></div>
           <img src="{% static 'user/images/leaf1.png' %}" class="leaf" id="leaf2">
         </div>
 </body>

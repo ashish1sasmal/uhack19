@@ -33,9 +33,11 @@ def register(request):
 		user=User.objects.create_user(username=email,email=email,password=password)
 		profile=Profile(user=user,phone=phone,city=city)
 		profile.save()
+		user=authenticate(username=email,password=password)
+		login(request,user)
 		sent_email(email,name)
 		print("yes")
-		return redirect('login')
+		return redirect('home')
 
 	return render(request,'user/register.html')
 
