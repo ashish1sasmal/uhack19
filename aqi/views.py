@@ -1,10 +1,11 @@
 from django.shortcuts import render
+
 import urllib.parse
 import requests
 from  geopy.geocoders import Nominatim
 
-from django.views.generic import TemplateView
-
+from django.views.generic import TemplateView,ListView
+from django.contrib.auth.models import User
 # Create your views here.
 
 # def geoloc(city):
@@ -25,8 +26,20 @@ def airindex(city):
 
 
 	json_data=requests.get(main_api).json()
-	return((json_data['data'])['aqi'])
+	return(json_data)
 
-class AQICheck(TemplateView):
-	template_name='check.html'
+def aqicheck(request):
+	a=request.user.profile.city
+	b=a.replace(' ','')
+	json_data=airindex(b)
+	aqi=json_data['data']['aqi']
+	print(aqi)
+	t=json_data['data']['time']['s']
+	co=json_data['data']['iaqi']['co']['v']
+	print(co)
+	#no2=json_data['data']['iaqi']['no2']['v']
+	o3=json_data['data']['iaqi']['o3']['v']
+	pm10=json_data['data']['iaqi']['pm10']['v']
+	so2=json_data['data']['iaqi']['so2']['v']
+	return render(request,'aqi/check.html',{'time':t,'city':a,'aqi':aqi,'co':co,'no':8,'o':o3,'pm':pm10,'so':so2})
 

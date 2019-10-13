@@ -1,10 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>AQI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
-	<h1>AIR QUALITY INDEX IS : {{info}}</h1>
+    <div style="float:left;margin-left: 40%;padding-right:10px;border:0px solid black;margin-top:-10px;"> <div id="city-aqi-container4"><div style="border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D6D6D6;display:inline-block;background-color:#fff;-webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.075);;" id="details-aqi-popup-1"><div style="width:280px;margin:8px;border:0px solid black;line-height:1.2;color:black;">
+            <center>
+            <div style="width:180px;overflow:hidden;font-size:12px;text-align:left;padding:2px 0;overflow:hidden;">
+            <b>{{ city }}</b> Air Quality.
+            </div>
+            {% if aqi < 51 %}
+            <div style="padding:5px 0px;background-color: #008000;color:#000000; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;;">
+            <div style="font-size:28px;">{{aqi}}</div>
+            <div style="font-size:18px;">Good</div>
+            </div>
+            
+               
+                {% elif aqi < 101 %}
+                    <div style="padding:5px 0px;background-color: #ffff00;color:#000000; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;;">
+            <div style="font-size:28px;">{{aqi}}</div>
+            <div style="font-size:18px;">moderate</div>
+            </div>
+            
+
+                    {% elif aqi < 151 %}
+                    <div style="padding:5px 0px;background-color: #ffa500;color:#000000; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;;">
+            <div style="font-size:28px;">{{aqi}}</div>
+            <div style="font-size:18px;">Unhealthy For sensitive group</div>
+            </div>
+            
+
+                    {% elif aqi < 201 %}
+                    <div style="padding:5px 0px;background-color: #ff0000;color:#000000; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;;">
+            <div style="font-size:28px;">{{aqi}}</div>
+            <div style="font-size:18px;">Unhealthy</div>
+            </div>
+            
+                
+
+
+                    {% elif aqi < 301 %}
+                    <div style="padding:5px 0px;background-color: #800080;color:#000000; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;;">
+            <div style="font-size:28px;">{{aqi}}</div>
+            <div style="font-size:18px;">Very Unhealthy</div>
+            </div>
+            
+                
+
+
+                    {% else %}
+                    <div style="padding:5px 0px;background-color: #800000;color:#000000; border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;;">
+            <div style="font-size:28px;">{{aqi}}</div>
+            <div style="font-size:18px;">Hazardous</div>
+            </div>
+            
+                
+                        {% endif %}
+                    <div style="font-size:12px;margin:5px 0;color:#888;">Updated on {{ time }}</div>
+            </center>
+
+                <table style="padding:0px;margin:0px;border-spacing: 0px;border:1px solid #eee;border-radius:3px;-moz-border-rdadius:3px;-webkit-border-radius:3px;width:100%;">
+                     <tbody>
+                        <tr style="height:40px;font-size:20px;;text-align:center;"><td nowrap=""><div style="width:28px;overflow:hidden;"><span style="font-weight:bold;;display:inline-block;overflow:hidden;text-overflow:ellipsis;max-width:70px;">PM  <span style="font-weight:normal;color:#888;font-size:10px;font-family: &quot;Arial Narrow&quot;,Arial, Helvetica, sans-serif; "></span> </span></div></td><td><center>{{pm}}</center></td><td align="center" style="font-size:10px;"></td></tr><tr style="height:40px;font-size:20px;background-color:#edf6fb;;text-align:center;"><td nowrap=""><div style="width:28px;overflow:hidden;"><span style="font-weight:bold;;display:inline-block;overflow:hidden;text-overflow:ellipsis;max-width:70px;">O3  <span style="font-weight:normal;color:#888;font-size:10px;font-family: &quot;Arial Narrow&quot;,Arial, Helvetica, sans-serif; "></span> </span></div></td><td><center>{{ o }}</center></td><td align="center" style="font-size:10px;"></td></tr>
+                        
+                            <tr style="height:40px;font-size:20px;background-color:#edf6fb;;text-align:center;">
+                                    <td nowrap="">
+                                        <div style="width:28px;overflow:hidden;">
+                                            <span style="font-weight:bold;;display:inline-block;overflow:hidden;text-overflow:ellipsis;max-width:70px;">CO  
+                                            <span style="font-weight:normal;color:#888;font-size:10px;font-family: &quot;Arial Narrow&quot;,Arial, Helvetica, sans-serif; "></span> 
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td><center>{{ co }}</center></td>
+                                    <td align="center" style="font-size:10px;"></td>
+                                </tr>
+                                <tr style="height:40px;font-size:20px;background-color:#edf6fb;;text-align:center;">
+                                        <td nowrap="">
+                                            <div style="width:28px;overflow:hidden;">
+                                                <span style="font-weight:bold;;display:inline-block;overflow:hidden;text-overflow:ellipsis;max-width:70px;">SO2
+                                                <span style="font-weight:normal;color:#888;font-size:10px;font-family: &quot;Arial Narrow&quot;,Arial, Helvetica, sans-serif; "></span> 
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td><center>{{ so }}</center></td>
+                                        <td align="center" style="font-size:10px;"></td>
+                                    </tr>
+            
+                    </tbody></table>
+                </div></div></div> </div>
 </body>
 </html>

@@ -1,5 +1,4 @@
 {% load staticfiles %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,40 +7,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'user/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/main.css' %}">
 </head>
 <body>
     <div class="heading-fixed">
         <div class="box">
-            <img src="images/image2.png" id="image-2">
+            <img src="{% static 'user/images/image2.png' %}" id="image-2">
             <font style="font-size:200% ; color: white ; font-weight: bold ; ">Greenify</font>
-            <img src="images/image4.png" id="image-1">
+            <img src="{% static 'user/images/image4.png' %}" id="image-1">
             <font style="font-size:150% ; color: white ; font-weight: bold ; position: absolute ; left:10%; top:52%;">"TOGETHER WE CAN RESTORE THE PLANET"</font>
-            <img src="images/image3.png" id="image-3">
+            <img src="{% static 'user/images/image3.png' %}" id="image-3">
         </div>
     </div>
 
         <div class="navbar" id="home"><a href="#">HOME</a></div>
         <div class="navbar" id="about"><a href="#"></a>ABOUT</a></div>
         <div class="navbar" id="aqi"><a href="#"></a>AQI</a></div>
-        <div class="navbar" id="register"><a href="#"></a>REGISTER</a></div>
+        <div class="navbar" id="register"><a href="{% url 'register' %}">REGISTER</a></div>
         <div class="navbar" id="login"><a href="#"></a>LOGIN</a></div>
-        <img src="images/image1.png" id="back-image">
+        <img src="{% static 'user/images/image1.png' %}" id="back-image">
         <div id="text">Welcome Back!</div>
-        <div id="login-text"><a href="{% url 'login' %}">LOGIN</a></div>
+        <div id="login-text">LOGIN</div>
         <div id="register-text"><a href="{% url 'register' %}">NEW ? REGISTER</a></div>
         <form method="POST">
-            {% csrf_token %}
-            <input type="email" id="email" placeholder="Email" name='email'>
-            
+            {%csrf_token%}
+        <input type="email" id="email" class="input" placeholder="  Email" name="email">
         <br>
-        <input type="password" id="password" placeholder="Password" name="password">
-        <input type="submit" class="button" id="login-button" value="Login">
+        <input type="password" id="password" class="input" placeholder="  Password" name="password">
+        <input type="submit" class="button" id="login-button1" value="Login">    
         </form>
         
-        <div id="forget-password">Forget Password?</div>
-        <input type="button" class="button" id="fb-button" value="Login with Facebook">
-        <input type="button" class="button" id="gmail-button" value="Login with Gmail">
+        <div id="forget-password" class="input">Forget Password?</div>
 
 </body>
 </html>
