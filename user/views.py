@@ -18,7 +18,7 @@ def sent_email(rec,name):
 	mail=smtplib.SMTP('smtp.gmail.com',587)
 	mail.ehlo()
 	mail.starttls()
-	mail.login('canvashcode@gmail.com','etpfedmqbfiwmcye')
+	mail.login('','')
 	mail.sendmail('canvashcode@gmail.com',str(rec),f"Congratulations {name}! You have been registered with Greenify.")
 	mail.close()
 

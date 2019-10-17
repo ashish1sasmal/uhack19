@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h3>Enter city name --->>></h3>
+	<form method="POST">
+		{% csrf_token %}
+		<input type="text" name="city">
+		<input type="submit" name="" value="submit">
+	</form>
+</body>
+</html>

@@ -28,18 +28,28 @@ def airindex(city):
 	json_data=requests.get(main_api).json()
 	return(json_data)
 
+
+
+
 def aqicheck(request):
-	a=request.user.profile.city
-	b=a.replace(' ','')
-	json_data=airindex(b)
-	aqi=json_data['data']['aqi']
-	print(aqi)
-	t=json_data['data']['time']['s']
-	co=json_data['data']['iaqi']['co']['v']
-	print(co)
-	#no2=json_data['data']['iaqi']['no2']['v']
-	o3=json_data['data']['iaqi']['o3']['v']
-	pm10=json_data['data']['iaqi']['pm10']['v']
-	so2=json_data['data']['iaqi']['so2']['v']
-	return render(request,'aqi/check.html',{'time':t,'city':a,'aqi':aqi,'co':co,'no':8,'o':o3,'pm':pm10,'so':so2})
+	print('1')
+	if request.method=='POST':
+		print('3')
+		a=request.POST.get('city')
+		b=a.replace(' ','')
+		json_data=airindex(b)
+		aqi=json_data['data']['aqi']
+		print(aqi)
+		t=json_data['data']['time']['s']
+		#co=json_data['data']['iaqi']['co']['v']
+		#print(co)
+		#no2=json_data['data']['iaqi']['no2']['v']
+		#o3=json_data['data']['iaqi']['o3']['v']
+		#pm10=json_data['data']['iaqi']['pm10']['v']
+		#so2=json_data['data']['iaqi']['so2']['v']
+		
+		return render(request,'aqi/check.html',{'time':t,'city':a,'aqi':aqi,'co':0,'no':0,'o':0,'pm':0,'so':0})
+	else:
+		print('2')
+		return render(request,'aqi/city.html')
 
